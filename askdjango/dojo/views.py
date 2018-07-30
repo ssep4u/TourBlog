@@ -25,7 +25,6 @@ def post_list2(request):
 
 
 def post_list3(request):
-    name = '공유'
     return JsonResponse({
         'message': '안녕 파이썬/장고',
         'items': ['파이썬', '장고', 'Celery', 'Azure', 'AWS'],
