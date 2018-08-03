@@ -9,6 +9,9 @@ def lnglat_validator(value):
 
 
 class Post(models.Model):
+    class Meta:
+        ordering = ['-id']
+        
     STATUS_CHOICES = (
         ('d', 'Draft'),
         ('p', 'Published'),
