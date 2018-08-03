@@ -27,6 +27,9 @@ class Post(models.Model):
     lnglat = models.CharField(
         max_length=50, blank=True, help_text='경도, 위도 포맷으로 입력',
         validators=[lnglat_validator])
-    status = models.CharField(max_length=1, choices=STATUS_CHOICES )
+    status = models.CharField(max_length=1, choices=STATUS_CHOICES)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.title
