@@ -11,6 +11,9 @@
 <body>
     <h1>{{ post.title }}</h1>
     {{ post.content | linebreaks }}
+    <hr>
+    <h3>Comments</h3>
+    {{ post.comment_set.all}}
 </body>
 
 </html>
