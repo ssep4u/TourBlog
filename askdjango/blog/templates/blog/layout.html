@@ -1,15 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minium-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{% block title %}AskDjango's Blog{% endblock title %}</title>
-</head>
-<body>
-        <h1>AskDjango</h1>
-        {% block content %}
-        
-        {% endblock content %}
-</body>
-</html>
+{% extends "layout.html" %}
+
+{% block title %}
+AskDjango's Blog
+{% endblock title %}
