@@ -19,10 +19,10 @@ from django.contrib import admin
 from django.shortcuts import redirect
 
 # def root(request):
-#     return redirect('post_list')
+#     return redirect('blog:post_list')
 
 urlpatterns = [
-    url(r'^$', lambda r:redirect('post_list')),
+    url(r'^$', lambda r:redirect('blog:post_list'), name='root'),
     url(r'^admin/', admin.site.urls),
     url(r"^blog/", include('blog.urls', namespace='blog')),
     url(r'^dojo/', include('dojo.urls')),
