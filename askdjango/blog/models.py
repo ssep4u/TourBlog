@@ -1,6 +1,7 @@
 import re
 from django.db import models
 from django.forms import ValidationError
+from django.urls import reverse
 from django.conf import settings
 
 
@@ -36,10 +37,13 @@ class Post(models.Model):
     tag_set = models.ManyToManyField("Tag", blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-
+ 
     def __str__(self):
         return self.title
 
+    def get_absolute_url(self):
+        return reverse('blog:post_detail', args=[self.id])
+    
 
 class Comment(models.Model):
     post = models.ForeignKey(Post)

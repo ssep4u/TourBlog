@@ -16,10 +16,15 @@ Including another URLconf
 from django.conf import settings
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.shortcuts import redirect
+
+# def root(request):
+#     return redirect('post_list')
 
 urlpatterns = [
+    url(r'^$', lambda r:redirect('post_list')),
     url(r'^admin/', admin.site.urls),
-    url(r"^blog/", include('blog.urls')),
+    url(r"^blog/", include('blog.urls', namespace='blog')),
     url(r'^dojo/', include('dojo.urls')),
     url(r'^accounts/', include('accounts.urls')),
     url(r'^shop/', include('shop.urls')),
